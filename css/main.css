@@ -2,10 +2,11 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: 'Lato', 'Advent Pro', sans-serif;
+    font-size: 16px;
 }
 
 .hero-image {
-    background-image: url("../assets/top_dos_header_bg.png");
+    background-image: url("../assets/top_dos_header_high_gradient_bg.jpg");
     width: auto;
     height: 100%;
     background-position: center;
@@ -90,3 +91,196 @@ h1 span {
         float: none;
     }
 }
+
+/****************
+ABOUT US SECTION 2
+*******************/
+
+.about-us-wrapper {
+    display: flex;
+    height: 850px;
+    width: 100%;
+}
+
+.about-us-content {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    /*flex-basis: 100%;*/
+    flex: 1;
+    padding: 100px 50px;
+}
+
+.about-us-content h2 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 36px;
+}
+
+.yellow-stripe {
+    width: 75px;
+    border-top: 4px solid #D89514;
+    padding-top:20px;
+}
+
+.img-jap-cuisine {
+    background-image: url("../assets/top_dos_selected.jpg");
+    width: auto;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.img-enjoy-cuisine {
+    background-image: url("../assets/top_dos_enjoycuisine.jpg");
+    width: auto;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.div-img-about-us {
+    width: 450px;
+    height: 600px;
+}
+
+@media screen and (max-width: 1400px) {
+    .column {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 40px 10px;
+    }
+}
+
+/****************
+ABOUT US SECTION 3
+*******************/
+
+.about-us-section3 {
+    width: 100%;
+    height: 850px;
+    margin-top: 10%;
+    color: white;
+}
+
+.img-bg-section3 {
+    background-image: url("../assets/top-about-section3-gradient.jpg");
+    width: auto;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.div-section3-content {
+    width: 25%;
+    float: right;
+    margin: 150px 110px;
+}
+
+.div-section3-content h2 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 36px;
+}
+
+.div-section3-content h3 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 30px;
+    color: #D89514;
+}
+
+.rowIcons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.columnIcons {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.icons-section3 {
+    margin-top: 10px;
+}
+
+.icons-section3 img {
+    display: block;
+    margin-right: auto;
+    margin-left: 20%;
+}
+
+@media screen and (max-width: 1400px) {
+    .about-us-section3 {
+        height: 920px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .about-us-section3 {
+        height: 1000px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .about-us-section3 {
+        height: 1050px;
+    }
+    .about-us-section3-wrapper {
+        width: 100%;
+        margin-top: 950px;
+        color: white;
+    }
+
+    .div-section3-content {
+        width: 25%;
+        float: right;
+        margin: 10px 10px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .about-us-section3 {
+        height: 1150px;
+    }
+    .about-us-section3-wrapper {
+        width: 100%;
+        margin-top: 1020px;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about-us-section3 {
+        height: 1450px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-us-section3 {
+        height: 1770px;
+    }
+}
+
+/****************
+MENU
+*******************/
