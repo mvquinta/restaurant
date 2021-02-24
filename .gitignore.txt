@@ -1,3 +1,2 @@
 backupAssets
 node_modules
-Plain_Text.txt
