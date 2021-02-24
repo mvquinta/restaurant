@@ -1,4 +1,7 @@
-import foo from "./food-menu-dessert";
+import foodMenuTraditional from './food-menu-traditional'
+import foodMenuDessert from './food-menu-dessert'
+import foodMenuFusion from './food-menu-fusion'
+import foodMenuSashimi from './food-menu-sashimi'
 
 function heroHeader() {
     //header main div
@@ -275,32 +278,33 @@ function menuTitle() {
 
     const menuNavbar = document.createElement('nav')
     const ulNavbar = document.createElement('ul')
+    ulNavbar.classList.add('food-menu-ul')
 
     const liNavbarTrad = document.createElement('li')
     const aNavbarTrad = document.createElement('a')
     aNavbarTrad.classList.add('btn-food-menu')
-    aNavbarTrad.setAttribute('href', '#')
+    //aNavbarTrad.setAttribute('href', '#')
     aNavbarTrad.innerHTML = 'TRADITIONAL'
     liNavbarTrad.appendChild(aNavbarTrad)
 
     const liNavbarFusion = document.createElement('li')
     const aNavbarFusion = document.createElement('a')
     aNavbarFusion.classList.add('btn-food-menu')
-    aNavbarFusion.setAttribute('href', '#')
+    //aNavbarFusion.setAttribute('href', '#')
     aNavbarFusion.innerHTML = 'FUSION'
     liNavbarFusion.appendChild(aNavbarFusion)
 
     const liNavbarSashimi = document.createElement('li')
     const aNavbarSashimi = document.createElement('a')
     aNavbarSashimi.classList.add('btn-food-menu')
-    aNavbarSashimi.setAttribute('href', '#')
+    //aNavbarSashimi.setAttribute('href', '#')
     aNavbarSashimi.innerHTML = 'SASHIMI'
     liNavbarSashimi.appendChild(aNavbarSashimi)
 
     const liNavbarDessert = document.createElement('li')
     const aNavbarDessert = document.createElement('a')
     aNavbarDessert.classList.add('btn-food-menu')
-    aNavbarDessert.setAttribute('href', '#')
+    //aNavbarDessert.setAttribute('href', '#')
     aNavbarDessert.innerHTML = 'DESSERTS'
     liNavbarDessert.appendChild(aNavbarDessert)
 
@@ -319,94 +323,13 @@ function menuTitle() {
     return divMenuTitle
 }
 
-function menuContentTraditional() {
+function menuContent() {
     const divMenuContent = document.createElement('div')
     divMenuContent.classList.add('div-menu-content')
-    const divMenuContentFlex = document.createElement('div')
-    divMenuContentFlex.classList.add('menu-content-flex')
-    const divRowMenuFood = document.createElement('div')
-    divRowMenuFood.classList.add('row-menu-food')
-    const divColumnMenuFood = document.createElement('div')
-    divColumnMenuFood.classList.add('column-menu-food')
-    const divContentMenuFood = document.createElement('div')
-    divContentMenuFood.classList.add('content-menu-food')
 
-    const h2FoodType = document.createElement('h2')
-    h2FoodType.innerHTML = 'Traditional Sushi'
-
-    //First Option Block
-    const divMenuOptionsFirst = document.createElement('div')
-    divMenuOptionsFirst.classList.add('menu-options')
-    const h3First = document.createElement('h3')
-    h3First.innerHTML = 'First Option'
-    const spanFirst = document.createElement('span')
-    spanFirst.classList.add('price')
-    spanFirst.innerHTML = '9.50€'
-    h3First.appendChild(spanFirst)
-    const pFirst = document.createElement('p')
-    pFirst.innerHTML = 'Porttitor feugiat mauris tempus, viverra pulvinar. Diam pellentesque.'
-    //
-
-    //Second Option Block
-    const divMenuOptionsSecond = document.createElement('div')
-    divMenuOptionsSecond.classList.add('menu-options')
-    const h3Second = document.createElement('h3')
-    h3Second.innerHTML = 'Second Option'
-    const spanSecond = document.createElement('span')
-    spanSecond.classList.add('price')
-    spanSecond.innerHTML = '10.50€'
-    h3Second.appendChild(spanSecond)
-    const pSecond = document.createElement('p')
-    pSecond.innerHTML = 'Aliquam aliquam vel vitae velit etiam eget facilisis in. Non vulputate.'
-    //
-
-    //Third Option Block
-    const divMenuOptionsThird = document.createElement('div')
-    divMenuOptionsThird.classList.add('menu-options')
-    const h3Third = document.createElement('h3')
-    h3Third.innerHTML = 'Third Option'
-    const spanThird = document.createElement('span')
-    spanThird.classList.add('price')
-    spanThird.innerHTML = '11.50€'
-    h3Third.appendChild(spanThird)
-    const pThird = document.createElement('p')
-    pThird.innerHTML = 'In varius nisl, justo morbi ornare etiam fringilla vitae congue. Vivamus.'
-    //
-
-    const divColumnMenuFoodImg = document.createElement('div')
-    divColumnMenuFoodImg.classList.add('column-menu-food')
-    const divImgMenuFood = document.createElement('div')
-    divImgMenuFood.classList.add('image-menu-food')
-
-    //First Option Appends Block
-    divMenuOptionsFirst.appendChild(h3First)
-    divMenuOptionsFirst.appendChild(pFirst)
-    //
-
-    //Second Option Appends Block
-    divMenuOptionsSecond.appendChild(h3Second)
-    divMenuOptionsSecond.appendChild(pSecond)
-    //
-
-    //Third Option Appends Block
-    divMenuOptionsThird.appendChild(h3Third)
-    divMenuOptionsThird.appendChild(pThird)
-    //
-
-    divContentMenuFood.appendChild(h2FoodType)
-    divContentMenuFood.appendChild(divMenuOptionsFirst)
-    divContentMenuFood.appendChild(divMenuOptionsSecond)
-    divContentMenuFood.appendChild(divMenuOptionsThird)
-
-    divColumnMenuFood.appendChild(divContentMenuFood)
-    divRowMenuFood.appendChild(divColumnMenuFood)
-    divRowMenuFood.appendChild(divColumnMenuFoodImg)
-    divColumnMenuFoodImg.appendChild(divImgMenuFood)
-    divMenuContentFlex.appendChild(divRowMenuFood)
-    divMenuContent.appendChild(divMenuContentFlex)
+    divMenuContent.appendChild(foodMenuTraditional())
 
     return divMenuContent
-
 }
 
 function menuWrapper() {
@@ -414,7 +337,7 @@ function menuWrapper() {
     divMenuWrapper.classList.add('menu-wrapper')
 
     divMenuWrapper.appendChild(menuTitle())
-    divMenuWrapper.appendChild(menuContentTraditional())
+    divMenuWrapper.appendChild(menuContent())
 
     return divMenuWrapper
 }
@@ -553,6 +476,63 @@ function dreamsOfSuhi() {
     document.body.appendChild(heroHeader())
     document.body.appendChild(main())
     document.body.appendChild(footer())
+
+    // let a = document.querySelectorAll('.btn-food-menu')
+    // console.log(a)
+
+    document.querySelector('.food-menu-ul').addEventListener('click', (e) => {
+        let menuClick = e.target.textContent
+        if (menuClick === 'TRADITIONAL') {
+            console.log('traditional was clicked')
+            let menuWrapper = document.querySelector('.menu-wrapper')
+            let removeDiv = document.querySelector('.div-menu-content')
+            removeDiv.remove()
+            let newDivMenuContent = document.createElement('div')
+            newDivMenuContent.classList.add('div-menu-content')
+            newDivMenuContent.appendChild(foodMenuTraditional())
+            menuWrapper.appendChild(newDivMenuContent)
+        } else if (menuClick === 'FUSION') {
+            console.log('fusion was clicked')
+            let menuWrapper = document.querySelector('.menu-wrapper')
+            let removeDiv = document.querySelector('.div-menu-content')
+            removeDiv.remove()
+            let newDivMenuContent = document.createElement('div')
+            newDivMenuContent.classList.add('div-menu-content')
+            newDivMenuContent.appendChild(foodMenuFusion())
+            menuWrapper.appendChild(newDivMenuContent)
+        } else if (menuClick === 'SASHIMI') {
+            console.log('sashimi was clicked')
+            let menuWrapper = document.querySelector('.menu-wrapper')
+            let removeDiv = document.querySelector('.div-menu-content')
+            removeDiv.remove()
+            let newDivMenuContent = document.createElement('div')
+            newDivMenuContent.classList.add('div-menu-content')
+            newDivMenuContent.appendChild(foodMenuSashimi())
+            menuWrapper.appendChild(newDivMenuContent)
+        } else if (menuClick === 'DESSERTS') {
+            console.log('dessert was clicked')
+            let menuWrapper = document.querySelector('.menu-wrapper')
+            let removeDiv = document.querySelector('.div-menu-content')
+            removeDiv.remove()
+            let newDivMenuContent = document.createElement('div')
+            newDivMenuContent.classList.add('div-menu-content')
+            newDivMenuContent.appendChild(foodMenuDessert())
+            menuWrapper.appendChild(newDivMenuContent)
+        }
+
+    })
+
+
+    // document.querySelector('.btn-food-menu').addEventListener('click', (e) => {
+    //     const menuWrapper = document.querySelector('.menu-wrapper')
+    //     let removeDiv = document.querySelector('.div-menu-content')
+    //     removeDiv.remove()
+    //     let newDivMenuContent = document.createElement('div')
+    //     newDivMenuContent.classList.add('div-menu-content')
+    //     newDivMenuContent.appendChild(foodMenuDessert())
+    //
+    //     menuWrapper.appendChild(newDivMenuContent)
+    // })
 }
 
 dreamsOfSuhi()

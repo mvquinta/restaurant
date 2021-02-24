@@ -1,4 +1,4 @@
-function foodMenuDessert() {
+function foodMenuTraditional() {
     const divMenuContentFlex = document.createElement('div')
     divMenuContentFlex.classList.add('menu-content-flex')
     const divRowMenuFood = document.createElement('div')
@@ -9,7 +9,7 @@ function foodMenuDessert() {
     divContentMenuFood.classList.add('content-menu-food')
 
     const h2FoodType = document.createElement('h2')
-    h2FoodType.innerHTML = 'Desserts'
+    h2FoodType.innerHTML = 'Traditional Sushi'
 
     //First Option Block
     const divMenuOptionsFirst = document.createElement('div')
@@ -87,9 +87,9 @@ function foodMenuDessert() {
     divColumnMenuFoodImg.appendChild(divImgMenuFood)
     divMenuContentFlex.appendChild(divRowMenuFood)
 
-    console.log("dessert content being load from external file")
+    console.log("traditional content being load from external file")
 
     return divMenuContentFlex
 }
 
-export default foodMenuDessert
+export default foodMenuTraditional
