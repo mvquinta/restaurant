@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/mvquinta/restaurant/issues"
   },
-  "homepage": "https://github.com/mvquinta/restaurant#readme",
+  "homepage": "https://github.com/mvquinta/restaurant",
   "devDependencies": {
     "webpack": "^5.24.0",
     "webpack-cli": "^4.5.0"
