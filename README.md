@@ -9,6 +9,8 @@ Objectives:
 All main objectives were done.
 I also added some more css styles and implemented some responsive (not fully tested)
 
+NOTE: NOT MOBILE READY!
+
 ////////////////
 ///////////////
 - Starting fresh new
