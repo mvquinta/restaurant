@@ -30,15 +30,15 @@ function heroHeader() {
     aBtnHome.innerHTML = 'HOME'
     const aBtnAboutUs = document.createElement('a')
     aBtnAboutUs.classList.add('btn-menu')
-    aBtnAboutUs.setAttribute('href', '#')
+    aBtnAboutUs.setAttribute('href', '#aboutUsWrapper')
     aBtnAboutUs.innerHTML = 'ABOUT US'
     const aBtnMenu= document.createElement('a')
     aBtnMenu.classList.add('btn-menu')
-    aBtnMenu.setAttribute('href', '#')
+    aBtnMenu.setAttribute('href', '#menuWrapper')
     aBtnMenu.innerHTML = 'MENU'
     const aBtnContact = document.createElement('a')
     aBtnContact.classList.add('btn-menu')
-    aBtnContact.setAttribute('href', '#')
+    aBtnContact.setAttribute('href', '#contactWrapper')
     aBtnContact.innerHTML = 'CONTACT'
 
     //Append all divs of navbar
@@ -120,6 +120,7 @@ function aboutUsWrapper() {
     //create about-us wrapper - first section
     const divAboutUsWrapper = document.createElement('div')
     divAboutUsWrapper.classList.add('about-us-wrapper')
+    divAboutUsWrapper.id = 'aboutUsWrapper'
 
     const divAboutUsContent = document.createElement('div')
     divAboutUsContent.classList.add('about-us-content')
@@ -335,6 +336,7 @@ function menuContent() {
 function menuWrapper() {
     const divMenuWrapper = document.createElement('div')
     divMenuWrapper.classList.add('menu-wrapper')
+    divMenuWrapper.id = 'menuWrapper'
 
     divMenuWrapper.appendChild(menuTitle())
     divMenuWrapper.appendChild(menuContent())
@@ -345,6 +347,7 @@ function menuWrapper() {
 function contactWrapper() {
     const divContactWrapper = document.createElement('div')
     divContactWrapper.classList.add('contact-wrapper')
+    divContactWrapper.id = 'contactWrapper'
     const divContactTitle = document.createElement('div')
     divContactTitle.classList.add('div-contact-title')
     const h2Contact = document.createElement('h2')
@@ -472,67 +475,51 @@ function main() {
     return divMain
 }
 
+function menuElection(menuClick) {
+    if (menuClick === 'TRADITIONAL') {
+        let menuWrapper = document.querySelector('.menu-wrapper')
+        let removeDiv = document.querySelector('.div-menu-content')
+        removeDiv.remove()
+        let newDivMenuContent = document.createElement('div')
+        newDivMenuContent.classList.add('div-menu-content')
+        newDivMenuContent.appendChild(foodMenuTraditional())
+        menuWrapper.appendChild(newDivMenuContent)
+    } else if (menuClick === 'FUSION') {
+        let menuWrapper = document.querySelector('.menu-wrapper')
+        let removeDiv = document.querySelector('.div-menu-content')
+        removeDiv.remove()
+        let newDivMenuContent = document.createElement('div')
+        newDivMenuContent.classList.add('div-menu-content')
+        newDivMenuContent.appendChild(foodMenuFusion())
+        menuWrapper.appendChild(newDivMenuContent)
+    } else if (menuClick === 'SASHIMI') {
+        let menuWrapper = document.querySelector('.menu-wrapper')
+        let removeDiv = document.querySelector('.div-menu-content')
+        removeDiv.remove()
+        let newDivMenuContent = document.createElement('div')
+        newDivMenuContent.classList.add('div-menu-content')
+        newDivMenuContent.appendChild(foodMenuSashimi())
+        menuWrapper.appendChild(newDivMenuContent)
+    } else if (menuClick === 'DESSERTS') {
+        let menuWrapper = document.querySelector('.menu-wrapper')
+        let removeDiv = document.querySelector('.div-menu-content')
+        removeDiv.remove()
+        let newDivMenuContent = document.createElement('div')
+        newDivMenuContent.classList.add('div-menu-content')
+        newDivMenuContent.appendChild(foodMenuDessert())
+        menuWrapper.appendChild(newDivMenuContent)
+    }
+}
+
 function dreamsOfSuhi() {
     document.body.appendChild(heroHeader())
     document.body.appendChild(main())
     document.body.appendChild(footer())
 
-    // let a = document.querySelectorAll('.btn-food-menu')
-    // console.log(a)
-
     document.querySelector('.food-menu-ul').addEventListener('click', (e) => {
         let menuClick = e.target.textContent
-        if (menuClick === 'TRADITIONAL') {
-            console.log('traditional was clicked')
-            let menuWrapper = document.querySelector('.menu-wrapper')
-            let removeDiv = document.querySelector('.div-menu-content')
-            removeDiv.remove()
-            let newDivMenuContent = document.createElement('div')
-            newDivMenuContent.classList.add('div-menu-content')
-            newDivMenuContent.appendChild(foodMenuTraditional())
-            menuWrapper.appendChild(newDivMenuContent)
-        } else if (menuClick === 'FUSION') {
-            console.log('fusion was clicked')
-            let menuWrapper = document.querySelector('.menu-wrapper')
-            let removeDiv = document.querySelector('.div-menu-content')
-            removeDiv.remove()
-            let newDivMenuContent = document.createElement('div')
-            newDivMenuContent.classList.add('div-menu-content')
-            newDivMenuContent.appendChild(foodMenuFusion())
-            menuWrapper.appendChild(newDivMenuContent)
-        } else if (menuClick === 'SASHIMI') {
-            console.log('sashimi was clicked')
-            let menuWrapper = document.querySelector('.menu-wrapper')
-            let removeDiv = document.querySelector('.div-menu-content')
-            removeDiv.remove()
-            let newDivMenuContent = document.createElement('div')
-            newDivMenuContent.classList.add('div-menu-content')
-            newDivMenuContent.appendChild(foodMenuSashimi())
-            menuWrapper.appendChild(newDivMenuContent)
-        } else if (menuClick === 'DESSERTS') {
-            console.log('dessert was clicked')
-            let menuWrapper = document.querySelector('.menu-wrapper')
-            let removeDiv = document.querySelector('.div-menu-content')
-            removeDiv.remove()
-            let newDivMenuContent = document.createElement('div')
-            newDivMenuContent.classList.add('div-menu-content')
-            newDivMenuContent.appendChild(foodMenuDessert())
-            menuWrapper.appendChild(newDivMenuContent)
-        }
-
+        menuElection(menuClick)
     })
-
-
-    // document.querySelector('.btn-food-menu').addEventListener('click', (e) => {
-    //     const menuWrapper = document.querySelector('.menu-wrapper')
-    //     let removeDiv = document.querySelector('.div-menu-content')
-    //     removeDiv.remove()
-    //     let newDivMenuContent = document.createElement('div')
-    //     newDivMenuContent.classList.add('div-menu-content')
-    //     newDivMenuContent.appendChild(foodMenuDessert())
-    //
-    //     menuWrapper.appendChild(newDivMenuContent)
-    // })
 }
 
 dreamsOfSuhi()

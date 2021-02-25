@@ -6,14 +6,14 @@ function foodMenuDessert() {
     const divColumnMenuFood = document.createElement('div')
     divColumnMenuFood.classList.add('column-menu-food')
     const divContentMenuFood = document.createElement('div')
-    divContentMenuFood.classList.add('content-menu-food')
+    divContentMenuFood.classList.add('content-menu-food-right')
 
     const h2FoodType = document.createElement('h2')
     h2FoodType.innerHTML = 'Desserts'
 
     //First Option Block
     const divMenuOptionsFirst = document.createElement('div')
-    divMenuOptionsFirst.classList.add('menu-options')
+    divMenuOptionsFirst.classList.add('menu-options-right')
     const h3First = document.createElement('h3')
     h3First.innerHTML = 'First Option'
     const spanFirst = document.createElement('span')
@@ -26,7 +26,7 @@ function foodMenuDessert() {
 
     //Second Option Block
     const divMenuOptionsSecond = document.createElement('div')
-    divMenuOptionsSecond.classList.add('menu-options')
+    divMenuOptionsSecond.classList.add('menu-options-right')
     const h3Second = document.createElement('h3')
     h3Second.innerHTML = 'Second Option'
     const spanSecond = document.createElement('span')
@@ -39,7 +39,7 @@ function foodMenuDessert() {
 
     //Third Option Block
     const divMenuOptionsThird = document.createElement('div')
-    divMenuOptionsThird.classList.add('menu-options')
+    divMenuOptionsThird.classList.add('menu-options-right')
     const h3Third = document.createElement('h3')
     h3Third.innerHTML = 'Third Option'
     const spanThird = document.createElement('span')
@@ -54,11 +54,7 @@ function foodMenuDessert() {
     divColumnMenuFoodImg.classList.add('column-menu-food')
     const divImgMenuFood = document.createElement('div')
     divImgMenuFood.classList.add('image-menu-food')
-
-    const testDiv = document.createElement('div')
-    testDiv.classList.add('testDivToDel')
-    testDiv.innerHTML = 'IM HERE TO BE DELETED'
-    divMenuOptionsFirst.appendChild(testDiv)
+    divImgMenuFood.id = 'image-dessert'
 
     //First Option Appends Block
     divMenuOptionsFirst.appendChild(h3First)
@@ -81,13 +77,12 @@ function foodMenuDessert() {
     divContentMenuFood.appendChild(divMenuOptionsSecond)
     divContentMenuFood.appendChild(divMenuOptionsThird)
 
+
+    divColumnMenuFoodImg.appendChild(divImgMenuFood)
+    divRowMenuFood.appendChild(divColumnMenuFoodImg)
     divColumnMenuFood.appendChild(divContentMenuFood)
     divRowMenuFood.appendChild(divColumnMenuFood)
-    divRowMenuFood.appendChild(divColumnMenuFoodImg)
-    divColumnMenuFoodImg.appendChild(divImgMenuFood)
     divMenuContentFlex.appendChild(divRowMenuFood)
-
-    console.log("dessert content being load from external file")
 
     return divMenuContentFlex
 }
