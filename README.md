@@ -13,22 +13,9 @@ NOTE: NOT MOBILE READY!
 
 ////////////////
 ///////////////
-- Starting fresh new
-- Html and css:
-	Header OK
-	About Us Section 1 OK
-	About Us Section 2 OK
-	Menu - OK
-	Contact - OK
-	Footer - OK
 
-TO DO LIST:
-- Clean CSS file (example, repeated styles that could all be done in one call like colors, font, font-size, etc) OK
-- Contact section Map is currently a temp image. Insert google map or similar - Not implemented
-- Apply webpack and necessary code. OK
-- JS Menu options and transitions - OK
+This was a project that I re-started one time since first version was more like a test field for implementing webpack.
+Also gave this project a little more time to do it since I wanted to review some CSS foundations.
 
-WHISLIST:
-- Implement some CSS animations- OK
 
 
