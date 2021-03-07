@@ -1,6 +1,8 @@
 # restaurant
 V01 - Project Restaurant for The Odin Project.
 
+[Live Demo](https://mvquinta.github.io/restaurant/)
+
 Objectives:
 1) Create page trough DOM
 2) Use Webpack
